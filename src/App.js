@@ -12,7 +12,7 @@ function App() {
 
     const getItems = async () => {
       try {
-        const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/13.13.1/data/en_US/item.json');
+        const response = await axios.get('https://ddragon.leagueoflegends.com/cdn/13.13.1/data/en_US/item.json');
         const allItems = Object.values(response.data.data);
         setItems(allItems);
         setInitialItems(allItems);
@@ -58,7 +58,7 @@ function App() {
                 items.map((item, index) =>
                 (
                   <div onClick={() => handleItemClick(item)} className='border-2 m-2 flex flex-col items-center cursor-pointer hover:border-fuchsia-700 border-gray-700' key={index}>
-                    <img src={"http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/" + item.image.full} width="64px" height="64px" />
+                    <img src={"https://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/" + item.image.full} width="64px" height="64px" />
                     <h1 className='font-bold mt-2 text-xl' style={{ color: "#C2B488" }}>{item.gold.base}</h1>
                     {/* <h2>fiyat : {item.gold.base}</h2>
                   {/* <h2>özellik : {item.description}</h2> */
@@ -78,7 +78,7 @@ function App() {
           {selectedItem ? (
             <div className="flex">
               <div className="w-1/3">
-                <img src={"http://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/" + selectedItem.image.full} className="w-full" />
+                <img src={"https://ddragon.leagueoflegends.com/cdn/13.13.1/img/item/" + selectedItem.image.full} className="w-full" />
               </div>
               <div className="w-2/3 pl-4">
                 <h2 className="text-xl font-bold">{selectedItem.name}</h2>
